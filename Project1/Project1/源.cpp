@@ -1,13 +1,16 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
-#include<stdlib.h>
+#include<iostream>
+using namespace std;
+template<class T> 
+class Foo{
+	T tVar;
+public:
+	Foo(T t) : tVar(t) { }
+};
+template<class T> class FooDerived :public Foo<T>
+{
+};
 int main()
 {
-	int* p = (int*)malloc(40);
-	free(p);
-	free(p);
-	free(p);
+	FooDerived<int> d(5);
 	return 0;
 }
-
-
